@@ -1,20 +1,20 @@
-#ifndef BOX_COMPUTER_H
-#define BOX_COMPUTER_H
+#pragma once
 
 #include <QObject>
 #include <QString>
+#include <QImage>
+#include <QQueue>
+#include <QThread>
+#include "box.h"
 
-class box_computer : public QObject
-{
+class box_worker:public QObject{
     Q_OBJECT
 public:
-    explicit box_computer(QObject *parent = 0);
-signals:
-    void calc_start();
-    void calc_stop();
-    void emit_box(int x, int y, int w, int h, QString label);
+    explicit box_worker(QObject *parent = 0);
 public slots:
-    void run();
+    void process(QImage img);
+signals:
+    void computed(QQueue<box> boxes);
+    void compute_started();
+    void compute_finished();
 };
-
-#endif // BOX_COMPUTER_H

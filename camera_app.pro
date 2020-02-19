@@ -15,10 +15,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     box_computer.cpp \
-    camera_view.cpp
+    frame_grabber.cpp
 
 HEADERS  += mainwindow.h \
     box_computer.h \
-    camera_view.h
+    frame_grabber.h \
+    box.h
 
 FORMS    += mainwindow.ui
