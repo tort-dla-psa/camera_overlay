@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     cam = new QCamera(QCamera::FrontFace);
     cam->setViewfinder(this->fgrb);
 
-    box_comp = new box_worker();
+    box_comp = new box_worker_rnd();
     worker_thr = new QThread();
     box_comp->moveToThread(worker_thr);
     connect(box_comp, &box_worker::computed, fgrb, &frame_grabber::draw_boxes);

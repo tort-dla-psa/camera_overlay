@@ -48,11 +48,9 @@ bool frame_grabber::present(const QVideoFrame &frame){
 
     QPainter pntr(&image);
     pntr.setPen(Qt::black);
-    while(boxes.size() > 0){
-        auto box = boxes.front();
+    for(const auto &box:boxes){
         pntr.drawRect(box.x, box.y, box.w, box.h);
         pntr.drawText(box.x, box.y, box.label);
-        boxes.pop_front();
     }
     emit has_image_to_draw(image);
     return true;

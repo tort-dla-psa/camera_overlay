@@ -1,13 +1,16 @@
-#include "box_computer.h"
+#include "box_worker_rnd.h"
 #include <QDateTime>
 #include <QThread>
 #include <random>
 
-box_worker::box_worker(QObject *parent)
-    :QObject(parent)
+box_worker_rnd::box_worker_rnd(QObject *parent)
+    :box_worker(parent)
 {}
 
-void box_worker::process(QImage img){
+void box_worker_rnd::set_network(QString path){
+}
+
+void box_worker_rnd::process(QImage img){
     emit compute_started();
     const int w = img.width(), h = img.height();
     unsigned int ms = static_cast<unsigned>(QDateTime::currentMSecsSinceEpoch());

@@ -5,7 +5,9 @@
 #include <QThread>
 #include <QLabel>
 #include "frame_grabber.h"
-#include "box_computer.h"
+#include "box_worker.h"
+#include "box_worker_rnd.h"
+#include "box_worker_tf.h"
 
 namespace Ui {
 class MainWindow;

@@ -14,12 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    box_computer.cpp \
-    frame_grabber.cpp
+    frame_grabber.cpp \
+    box_worker_rnd.cpp \
+    box_worker_tf.cpp
 
 HEADERS  += mainwindow.h \
-    box_computer.h \
     frame_grabber.h \
-    box.h
+    box.h \
+    box_worker.h \
+    box_worker_rnd.h \
+    box_worker_tf.h
 
 FORMS    += mainwindow.ui
